@@ -39,14 +39,15 @@ int	main(void) {
 	}
 
 	{
-		Span				span(1000);
-		std::vector<int>	range = {87, 10};
+		Span				span(100);
+		std::vector<int>	range = {1, 2, 3, 4, 5, 6};
 
 		std::cout << std::endl;
 		std::cout << " *** Adding range until span is full ***" << std::endl;
-		while (1) {
+		int i = 20;
+		while (i--) {
 			try { span.addRange(range.begin(), range.end());
-				std::cout << "range added..." << std::endl;
+				std::cout << i << ": range added..." << std::endl;
 			}
 			catch (std::exception &e) { std::cout << e.what() << std::endl; }
 		}
