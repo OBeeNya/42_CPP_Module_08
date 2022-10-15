@@ -13,6 +13,11 @@ void	Span::addNumber(int i) {
 	_vector.push_back(i);
 }
 
+void	Span::addRange(std::vector<int>::iterator beg, std::vector<int>::iterator end) {
+	if (_vector.size() + end - beg >= _N) throw (Span::Full());
+	_vector.insert(_vector.end(), beg, end);
+}
+
 int	Span::shortestSpan() {
 	if (!_vector.size() || _vector.size() == 1)
 		throw (Span::Impossible());

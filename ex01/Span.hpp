@@ -17,6 +17,7 @@ class	Span {
 		Span	&operator=(const Span &);
 
 		void				addNumber(int);
+		void				addRange(std::vector<int>::iterator, std::vector<int>::iterator);
 		int					shortestSpan();
 		int					longestSpan() const;
 		unsigned int		getN() const { return (_N); }

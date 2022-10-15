@@ -38,6 +38,20 @@ int	main(void) {
 		catch (std::exception &e) { std::cerr << e.what() << std::endl; }
 	}
 
+	{
+		Span				span(1000);
+		std::vector<int>	range = {87, 10};
+
+		std::cout << std::endl;
+		std::cout << " *** Adding range until span is full ***" << std::endl;
+		while (1) {
+			try { span.addRange(range.begin(), range.end());
+				std::cout << "range added..." << std::endl;
+			}
+			catch (std::exception &e) { std::cout << e.what() << std::endl; }
+		}
+	}
+
 	std::cout << std::endl;
 	return (0);
 }
